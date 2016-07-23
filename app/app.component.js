@@ -11,11 +11,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
+        this.title = "Angular 2DO!!!";
+        this.todos = ["Заработать на матане на фрилансе", "Поняшить Еву"];
     }
+    AppComponent.prototype.addTodo = function (title) {
+        if (title) {
+            this.todos.push(title);
+        }
+    };
+    AppComponent.prototype.test = function () {
+        console.log("test");
+    };
     AppComponent = __decorate([
         core_1.Component({
-            selector: 'app',
-            template: '<h1>Angular2</h1>'
+            selector: 'todo-app',
+            templateUrl: './app/app.component.html',
+            styleUrls: ['./app/app.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
