@@ -9,13 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var todo_1 = require("./todo");
 var TodoItem = (function () {
     function TodoItem() {
+        this.deleted = new core_1.EventEmitter();
     }
+    TodoItem.prototype.toggleDone = function () {
+        this.todo.done = !this.todo.done;
+    };
+    TodoItem.prototype.delete = function () {
+        this.deleted.emit(this.todo);
+    };
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', String)
+        __metadata('design:type', (typeof (_a = typeof todo_1.Todo !== 'undefined' && todo_1.Todo) === 'function' && _a) || Object)
     ], TodoItem.prototype, "todo", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], TodoItem.prototype, "deleted", void 0);
     TodoItem = __decorate([
         core_1.Component({
             selector: 'todo-item',
@@ -25,6 +37,7 @@ var TodoItem = (function () {
         __metadata('design:paramtypes', [])
     ], TodoItem);
     return TodoItem;
+    var _a;
 }());
 exports.TodoItem = TodoItem;
 //# sourceMappingURL=todo-item.component.js.map

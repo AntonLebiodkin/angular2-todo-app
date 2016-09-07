@@ -1,0 +1,5 @@
+[
+    { "title": "Изучить ES6", "done": false },
+    { "title": "Изучить TypeScript", "done": false },
+    { "title": "Изучить Angular 2", "done": false }
+]

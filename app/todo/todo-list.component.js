@@ -9,9 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var todo_item_component_1 = require('./todo-item.component');
 var TodoListComponent = (function () {
     function TodoListComponent() {
     }
+    TodoListComponent.prototype.onTodoDeleted = function (todo) {
+        if (todo) {
+            var index = this.todos.indexOf(todo);
+            if (index > -1) {
+                this.todos.splice(index, 1);
+            }
+        }
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Array)
@@ -21,7 +30,7 @@ var TodoListComponent = (function () {
             selector: 'todo-list',
             templateUrl: './app/todo/todo-list.component.html',
             styleUrls: ['./app/todo/todo-list.component.css'],
-            inputs: ['todos']
+            directives: [todo_item_component_1.TodoItem]
         }), 
         __metadata('design:paramtypes', [])
     ], TodoListComponent);

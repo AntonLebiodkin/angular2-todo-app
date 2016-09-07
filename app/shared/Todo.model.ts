@@ -1,4 +1,11 @@
-export class Todo {
+export interface ITodo {
+    id: number
+    title: string;
+    done: boolean;
+}
+
+export class Todo implements ITodo {
+    id: number;
     title: string;
     done: boolean;
     

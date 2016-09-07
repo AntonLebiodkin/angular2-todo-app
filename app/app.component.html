@@ -7,13 +7,8 @@
 </nav>
 
 <div class="ui text container">
-    <div class="ui segment form">
-        <div class="ui fluid action input">
-            <input type="text" class="form-control" name="title" placeholder="What to to?" (keyup.enter)="addTodo(titleInput.value)" #titleInput>
-            <button type="button" class="ui primary button" (click)="addTodo(titleInput.value); titleInput.value=''" (dblclick)="test()">Add</button>
-        </div>
-    </div>
-    <todo-list [todos]="todos"></todo-list>
+    <todo-form></todo-form>
+    <todo-list></todo-list>
 </div>
 
 
